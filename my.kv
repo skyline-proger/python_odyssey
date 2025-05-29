@@ -1,0 +1,17 @@
+<FirstScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'This is the first screen'
+        Button:
+            text: 'Go to Second Screen'
+            on_press: root.manager.current = 'second_screen'
+
+<SecondScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'This is the second screen'
+        Button:
+            text: 'Go to First Screen'
+            on_press: root.manager.current = 'first_screen'

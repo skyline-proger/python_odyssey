@@ -1,0 +1,185 @@
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+#:import Factory kivy.factory.Factory
+WindowManager:
+    FirstWindow:
+    SecondWindow:
+    ThirdWindow:
+    FourthWindow:
+    FifthWindow:
+    MapWindow:
+<FirstWindow>:
+    name:'first'
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'assets/museum.jpeg'
+        Color:
+            rgba: 0, 0, 0, 0.7
+        Rectangle:
+            pos: self.pos
+            size:self.size
+    FloatLayout:
+        orientation:'vertical'
+        size: root.width, root.height
+        anchor_x:'right'
+        anchor_y:'bottom'
+        Image:
+            source: 'assets/logo11.png'
+            size_hint:(.35, .35)
+            size: self.texture_size  # Adjusts the image size to the actual image dimensions
+            pos_hint: {'center_x': 0.5, 'center_y': 0.75}
+        Label:
+            text:'First Screen'
+            font_size: 32
+        Button:
+            size_hint:(.2, .12)
+            background_color: 0,0,0,0
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+            on_release:
+                app.root.current = 'second'
+                root.manager.transition=FadeTransition()
+            Image:
+                source: 'assets/start.png'
+                size: self.parent.size  # Set the size of the image to match the size of the button
+                allow_stretch: True  # Allow the image to stretch to fit the button size
+                keep_ratio: False
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+
+        Button:
+            size_hint:(.2, .12)
+            pos: (20, 20)
+            background_color: 0,0,0,0
+            pos_hint: {'center_x': 0.5, 'center_y': 0.35}
+
+            on_release:
+                app.root.current = 'map'
+                root.manager.transition=FadeTransition()
+            Image:
+                source: 'assets/settings.png'
+                size: self.parent.size  # Set the size of the image to match the size of the button
+                allow_stretch: True  # Allow the image to stretch to fit the button size
+                keep_ratio: False
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+
+
+        Button:
+            size_hint:(.2, .12)
+            pos: (20, 20)
+            background_color: 0,0,0,0
+            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+
+            on_release:
+                app.root.current = 'map'
+                root.manager.transition=FadeTransition()
+            Image:
+                source: 'assets/contact.png'
+                size: self.parent.size  # Set the size of the image to match the size of the button
+                allow_stretch: True  # Allow the image to stretch to fit the button size
+                keep_ratio: False
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+
+
+<SecondWindow>:
+    name:'second'
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'assets/museum.jpeg'
+        Color:
+            rgba: 0, 0, 0, 0.7
+        Rectangle:
+            pos: self.pos
+            size:self.size
+    FloatLayout:
+        orientation:'vertical'
+        size: root.width, root.height
+        anchor_x:'right'
+        anchor_y:'bottom'
+        Image:
+            source: 'assets/logo11.png'
+            size_hint:(.35, .35)
+            size: self.texture_size  # Adjusts the image size to the actual image dimensions
+            pos_hint: {'center_x': 0.5, 'center_y': 0.75}
+        Label:
+            text:'First Screen'
+            font_size: 32
+
+
+        Button:
+            size_hint:(.2, .12)
+            pos: (20, 20)
+            background_color: 0,0,0,0
+            pos_hint: {'center_x': 0.5, 'center_y': 0.35}
+
+            on_release:
+                app.root.current = 'second'
+                root.manager.transition=FadeTransition()
+            Image:
+                source: 'assets/settings.png'
+                size: self.parent.size  # Set the size of the image to match the size of the button
+                allow_stretch: True  # Allow the image to stretch to fit the button size
+                keep_ratio: False
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+
+
+        Button:
+            size_hint:(.2, .12)
+            pos: (20, 20)
+            background_color: 0,0,0,0
+            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+
+            on_release:
+                app.root.current = 'second'
+                root.manager.transition=FadeTransition()
+            Image:
+                source: 'assets/contact.png'
+                size: self.parent.size  # Set the size of the image to match the size of the button
+                allow_stretch: True  # Allow the image to stretch to fit the button size
+                keep_ratio: False
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+
+
+
+<MapWindow>:
+    name:'map'
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'assets/map.png'
+    FloatLayout:
+        orientation:'vertical'
+        size: root.width, root.height
+        anchor_x:'right'
+        anchor_y:'bottom'
+
+
+
+        Button:
+            name: 'aqtau1'
+            size_hint:(.024, .032)
+            background_color: 0,0,0,0
+            pos:(125,370)
+
+            on_release: Factory.MyPopup().open()
+            Image:
+                source: 'assets/active_task.png'
+                size: self.parent.size  # Set the size of the image to match the size of the button
+                allow_stretch: True  # Allow the image to stretch to fit the button size
+                keep_ratio: False
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+
+
+
+
+
+
