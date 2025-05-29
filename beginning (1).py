@@ -15,7 +15,7 @@ import street
 import openai  # Install using: pip install openai
 
 # Set up your OpenAI API key
-openai.api_key = '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'
+openai.api_key = 'API-KEY-HERE'  # Replace with your actual OpenAI API key
 
 
 
